@@ -3,8 +3,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Cross-document view transition example: Page 2</title>
-    <link rel="stylesheet" href="/1-carousel/shared/styles.css" /><link rel="stylesheet" href="styles.css" />
-
+    <link
+      rel="preload"
+      href="/1-carousel/shared/img/hong-kong.webp"
+      as="image"
+    />
+    <link rel="stylesheet" href="/1-carousel/shared/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
@@ -13,8 +18,11 @@
       src="/1-carousel/shared/img/hong-kong.webp"
       alt="A view of victoria harbour in Hong Kong."
     />
-    <a href="index.html" class="previous"><img src="/1-carousel/shared/img/arrow-left.svg" /></a>
-    <a href="page3.html" class="next"><img src="/1-carousel/shared/img/arrow-right.svg" /></a>
-   
+    <a href="index.html" class="previous"
+      ><img src="/1-carousel/shared/img/arrow-left.svg"
+    /></a>
+    <a href="page3.html" class="next"
+      ><img src="/1-carousel/shared/img/arrow-right.svg"
+    /></a>
   </body>
 </html>
