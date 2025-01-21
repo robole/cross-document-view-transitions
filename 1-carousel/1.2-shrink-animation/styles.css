@@ -1,0 +1,22 @@
+/* Turn view-transitions on */
+@view-transition {
+  navigation: auto;
+}
+
+/* Customize the default animation behavior */
+
+@keyframes shrink {
+  to {
+    scale: 0;
+  }
+}
+
+::view-transition-old(root) {
+  animation: shrink 1s;
+  animation-direction: normal;
+}
+
+::view-transition-new(root) {
+  animation: shrink 1s;
+  animation-direction: reverse;
+}

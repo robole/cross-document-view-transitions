@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cross-document view transitions</title>
+    <style>
+      @layer reset {
+        * {
+          box-sizing: border-box;
+        }
+
+        html,
+        body {
+          height: 100%;
+          background: white;
+        }
+
+        html,
+        body,
+        ul[class] {
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      @layer layout {
+        html {
+          line-height: 1.5;
+          font-size: 1.25em;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+            Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+            sans-serif;
+        }
+
+        html,
+        body {
+          background: hsl(160, 60%, 75%);
+        }
+
+        body {
+          padding: 2rem;
+          color: #333;
+        }
+
+        main {
+          max-width: 80ch;
+          width: 90%;
+          margin: 0 auto;
+          background: rgb(255 255 255 / 0.8);
+          border: 1px solid rgb(0 0 0 / 0.2);
+          border-radius: 0.25rem;
+          padding: 1rem;
+          margin: 3rem auto;
+
+          > *:first-child {
+            margin-top: 0;
+          }
+          > *:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        h1,
+        h2,
+        h3 {
+          font-weight: 700;
+        }
+
+        h2 {
+          text-decoration-color: hsl(156deg 100% 50% / 50%);
+        }
+
+        h3 {
+          text-decoration-color: hsla(75, 100%, 50%, 0.5);
+        }
+
+        a,
+        a:visited {
+          color: blue;
+        }
+
+        footer {
+          margin-top: 4em;
+          text-align: center;
+          font-style: italic;
+          font-size: 0.8em;
+        }
+
+        @media (min-width: 900px) {
+          dl.grid {
+            display: grid;
+            grid-template: auto / 360px 1fr;
+          }
+
+          dl.grid dt {
+            grid-column: 1;
+          }
+
+          dl.grid dd {
+            grid-column: 2;
+          }
+
+          dl.grid :is(dt, dd) {
+            margin: 0;
+            padding: 0.3em 0.5em;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+          }
+        }
+
+        dl.grid dt {
+          font-weight: 500;
+        }
+
+        dl.grid :is(dt, dd) {
+          margin: 0;
+          padding: 0.3em 0.5em;
+        }
+
+        dl.grid :is(dt, dd) > :first-child {
+          margin-top: 0;
+        }
+        dl.grid :is(dt, dd) > :last-child {
+          margin-bottom: 0;
+        }
+
+        dl.grid ul {
+          list-style-type: circle;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Cross-document view transitions</h1>
+      <p>
+        A collection of demos to explore the
+        <a
+          href="https://developer.chrome.com/docs/web-platform/view-transitions/"
+          >View Transition API</a
+        >. The focus is on cross-document view transitions.
+      </p>
+
+      <section>
+        <h2>The Demos</h2>
+
+        <div>
+          <h3>Carousel</h3>
+          <p>
+            A carousel is a component that allows you to cycle through a series
+            of images or content. With cross-document view transitions, we can
+            make each page a single item in the carousel. In these examples, I
+            will be showing a set of photographs of cities.
+          </p>
+          <ol>
+            <li>
+              <a href="/1-carousel/1.1-basic/">Basic</a>: The default crossfade
+              transition between 2 pages. The <code>animation-duration</code> is
+              set to 2 seconds to show the effect clearly.
+            </li>
+            <li>
+              <a href="/1-carousel/1.2-scale-transition/">Shrink animation</a>:
+              The animation shrinks the source page out of view, and expands the
+              target page into view.
+            </li>
+            <li>
+              <a href="/1-carousel/1.3-skip-view-transition/"
+                >Skip view transition</a
+              >: Give the user the choice to disable view transitions through a
+              checkbox.
+            </li>
+            <li>
+              <a href="/1-carousel/1.4-slide-horizontal-animation/"
+                >Slide animation</a
+              >: Slide to the right or left depending on if the next or previous
+              link was clicked
+            </li>
+          </ol>
+        </div>
+
+        <div>
+          <h3>Pagination</h3>
+
+          <p>
+            Pagination component that slides the page based on the direction you
+            are going.
+          </p>
+
+          <ul>
+            <li>
+              <a href="/2-pagination/mpa/">MPA</a>
+              <em>(Chrome 126+, Safari 18.2+)</em>
+            </li>
+          </ul>
+        </div>
+
+        <h3>Stack Navigator</h3>
+
+        <p>
+          Chat application that sports a Stack Navigator type of transitions.
+        </p>
+
+        <ul>
+          <li>
+            <a href="/stack-navigator/mpa/">MPA</a>
+            <em>(Chrome 126+, Safari 18.2+)</em>
+          </li>
+          <li>
+            <a href="/stack-navigator/mpa-prerender/">MPA (with Prerender)</a>
+            <em>(Chrome 126+, Safari 18.2+ (without prerendering))</em>
+          </li>
+        </ul>
+
+        <h3>Profiles</h3>
+
+        <p>List of profiles, with overview - detail navigation</p>
+
+        <ul>
+          <li>
+            <a href="/profiles/mpa/">MPA + Navigation API</a>
+            <em>(Chrome 126+)</em>
+          </li>
+        </ul>
+
+        <h3>Video Zoom</h3>
+
+        <p>Make a <code>video</code> element bigger while it keeps playing.</p>
+
+        <ul>
+          <li>
+            <a href="/video/mpa/">MPA</a> leveraging <code>pageswap</code> and
+            <code>pagereveal</code> to transfer state between pages
+            <em>(Chrome 126+, Safari 18.2+)</em>
+          </li>
+        </ul>
+
+        <h3>Circle</h3>
+
+        <p>A circular clip path reveal from one view/page to the other.</p>
+
+        <ul>
+          <li>
+            <a href="/circle/spa/">SPA</a> <em>(Chrome 111+, Safari 18+)</em>
+          </li>
+          <li>
+            <a href="/circle/mpa/">MPA + Navigation API</a>: Transfer the state
+            using <code>pageswap</code> and <code>pagereveal</code> + add render
+            blocking to make sure the <code>#startingPointMarker</code> element
+            is present in the DOM <em>(Chrome 126+, Safari TP with flags)</em>
+          </li>
+        </ul>
+
+        <h3>Off the Beaten Path</h3>
+
+        <p>A more complex demo with multiple elements animating in sequence</p>
+
+        <ul>
+          <li>
+            <a href="/off-the-beaten-path/mpa/">MPA + Navigation API</a>
+            leveraging <code>pageswap</code> and <code>pagereveal</code> to
+            transfer state between pages
+            <em>(Chrome 126+, Safari TP with flags)</em>
+          </li>
+        </ul>
+
+        <h3>Sortable</h3>
+
+        <p>List of sortable items inside a scrollable container</p>
+
+        <ul>
+          <li>
+            <a href="/sortable/v-t-group/"
+              >Nested View Transition Groups with
+              <code>view-transition-group</code></a
+            >
+            <em
+              >(Chrome with
+              <code>#enable-experimental-web-platform-features</code> flag)</em
+            >
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

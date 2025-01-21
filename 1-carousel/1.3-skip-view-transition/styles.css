@@ -1,0 +1,23 @@
+label {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+
+  font-size: 1.5rem;
+  z-index: 99;
+
+  input {
+    margin-inline: 0.5rem;
+    transform: scale(1.25);
+  }
+}
+
+/* Turn view-transitions on */
+@view-transition {
+  navigation: auto;
+}
+
+/* slow down the animation */
+::view-transition-group(root) {
+  animation-duration: 2s;
+}

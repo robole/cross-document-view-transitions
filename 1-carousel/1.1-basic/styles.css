@@ -1,0 +1,9 @@
+/* Turn view-transitions on */
+@view-transition {
+  navigation: auto;
+}
+
+/* slow down the animation */
+::view-transition-group(root) {
+  animation-duration: 2s;
+}
