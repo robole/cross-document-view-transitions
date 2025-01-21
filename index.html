@@ -83,8 +83,10 @@
         }
 
         img {
-          max-width: 100%;
+          display: block;
+          max-width: 60%;
           height: auto;
+          margin: 0 auto;
         }
 
         footer {
@@ -154,10 +156,9 @@
         <div>
           <h3>Carousel</h3>
           <p>
-            A carousel is a component that allows you to cycle through a series
-            of content. With cross-document view transitions, we can make each
-            page a single item in the carousel. In these examples, I will be
-            showing a set of photographs of cities.
+            A carousel showing a set of photographs of cities. We can make each
+            page a single item in the carousel when we utilise cross-document
+            view transitions.
           </p>
           <img
             src="media/carousel.webp"
@@ -187,43 +188,10 @@
               <a href="/1-carousel/1.4-slide-horizontal-animation/"
                 >Slide animation</a
               >: Slide to the right or left depending on if the next or previous
-              link was clicked
+              link was clicked.
             </li>
           </ol>
         </div>
-
-        <div>
-          <h3>Pagination</h3>
-
-          <p>
-            Pagination component that slides the page based on the direction you
-            are going.
-          </p>
-
-          <ul>
-            <li>
-              <a href="/2-pagination/mpa/">MPA</a>
-              <em>(Chrome 126+, Safari 18.2+)</em>
-            </li>
-          </ul>
-        </div>
-
-        <h3>Stack Navigator</h3>
-
-        <p>
-          Chat application that sports a Stack Navigator type of transitions.
-        </p>
-
-        <ul>
-          <li>
-            <a href="/stack-navigator/mpa/">MPA</a>
-            <em>(Chrome 126+, Safari 18.2+)</em>
-          </li>
-          <li>
-            <a href="/stack-navigator/mpa-prerender/">MPA (with Prerender)</a>
-            <em>(Chrome 126+, Safari 18.2+ (without prerendering))</em>
-          </li>
-        </ul>
 
         <h3>Profiles</h3>
 
