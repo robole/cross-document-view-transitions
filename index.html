@@ -47,11 +47,13 @@
           max-width: 80ch;
           width: 90%;
           margin: 0 auto;
+
           background: rgb(255 255 255 / 0.8);
           border: 1px solid rgb(0 0 0 / 0.2);
           border-radius: 0.25rem;
+
           padding: 1rem;
-          margin: 3rem auto;
+          margin: 1rem auto;
 
           > *:first-child {
             margin-top: 0;
@@ -78,6 +80,11 @@
         a,
         a:visited {
           color: blue;
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
         }
 
         footer {
@@ -148,10 +155,17 @@
           <h3>Carousel</h3>
           <p>
             A carousel is a component that allows you to cycle through a series
-            of images or content. With cross-document view transitions, we can
-            make each page a single item in the carousel. In these examples, I
-            will be showing a set of photographs of cities.
+            of content. With cross-document view transitions, we can make each
+            page a single item in the carousel. In these examples, I will be
+            showing a set of photographs of cities.
           </p>
+          <img
+            src="media/carousel.webp"
+            alt="screenshot of the carousel showing the first item. It has a title
+          : Cape Town. It shows a picture of Cape Town coastline. It has a next arrow."
+            width="1536"
+            height="2048"
+          />
           <ol>
             <li>
               <a href="/1-carousel/1.1-basic/">Basic</a>: The default crossfade
@@ -239,9 +253,6 @@
         <p>A circular clip path reveal from one view/page to the other.</p>
 
         <ul>
-          <li>
-            <a href="/circle/spa/">SPA</a> <em>(Chrome 111+, Safari 18+)</em>
-          </li>
           <li>
             <a href="/circle/mpa/">MPA + Navigation API</a>: Transfer the state
             using <code>pageswap</code> and <code>pagereveal</code> + add render

@@ -1,22 +1,23 @@
 # Cross-document view transtions
 
-A collection of demos focused on cross-document view transitions.
+A collection of demos focused on cross-document view transitions utilising the [View Transition API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API).
 
-## Installation
+You can find a live version of this at: <https://cross-document-view-transtions.netlify.app/>.
 
-- Clone this Repo
-- Install dependencies using NPM
+## Run project locally
 
-    ```bash
-    npm i
-    ```
+1. Clone this repo.
+1. Install dependencies using a package manager such as npm.
+1. Start the local server with `npm run start`.
+1. Visit [http://localhost:3000/](http://localhost:3000/).
 
-## Running the project
+```shell
+git clone https://github.com/robole/cross-document-view-transitions
+cd cross-document-view-transitions
+npm install
+npm run start
+```
 
-- Start the local server
+## Attribution
 
-    ```bash
-    npm run start
-    ```
-
-- Visit [http://localhost:3000/](http://localhost:3000/)
+Some of the demos here are included from Bramus' [view-transitions-demos](https://github.com/bramus/view-transitions-demos).
